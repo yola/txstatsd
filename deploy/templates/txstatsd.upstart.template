@@ -3,11 +3,14 @@ description "txStatsD - A network daemon for aggregating statistics"
 start on runlevel [2345]
 stop on runlevel [!2345]
 
-expect daemon
+exec {{conf.deploy.root}}/txstatsd/live/virtualenv/bin/python \
+     {{conf.deploy.root}}/txstatsd/live/virtualenv/bin/twistd \
+        --uid nobody --gid nogroup \
+        --logfile {{aconf.path.log}} \
+        --pidfile /var/run/txstatsd.pid \
+        --nodaemon \
+        statsd -c /etc/yola/txstatsd.conf
 
-env PATH={{conf.deploy.root}}/txstatsd/live/virtualenv/bin:$PATH
+respawn
 
-exec twistd --uid nobody --gid nobody \
-            --logfile /var/log/txstatsd.log \
-            --pidfile /var/run/txstatsd.pid \
-            statsd -c /etc/yola/txstatsd.conf
+respawn limit 10 5
