@@ -1,0 +1,8 @@
+*.py[co]
+.*.swp
+/build
+/configuration.json
+/dist
+/meta.json
+/virtualenv
+/virtualenv.tar.gz
