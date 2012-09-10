@@ -1,13 +1,13 @@
 [statsd]
 # The host where carbon cache is listening.
-carbon-cache-host: localhost
+carbon-cache-host: {{cconf.url.graphite_carbon.host}}
 # The port where carbon cache is listening.
-carbon-cache-port: 2003
+carbon-cache-port: {{cconf.url.graphite_carbon.pickle_port}}
 # The UDP port where we will listen.
-listen-port: 8125
+listen-port: {{aconf.port}}
 
 # The number of milliseconds between each flush.
-flush-interval: 60000
+flush-interval: {{aconf.flush_interval}}
 
 # Which additional stats to report {process|net|io|system}.
 report:
