@@ -2,6 +2,7 @@
 .*.swp
 /build
 /configuration.json
+/deploy/configuration/local
 /dist
 /meta.json
 /virtualenv
