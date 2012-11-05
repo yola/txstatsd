@@ -1,8 +1,8 @@
 txStatsD==1.0.0dev20120728
 # txStatsD dependencies:
 Twisted==12.2.0
-carbon==0.9.10
 whisper==0.9.10
+carbon==0.9.10
 mocker==1.1
 psutil==0.4.1
 wsgiref==0.1.2
