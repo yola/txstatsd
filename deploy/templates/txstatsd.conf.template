@@ -1,8 +1,8 @@
 [statsd]
 # The host where carbon cache is listening.
-carbon-cache-host: {{cconf.url.graphite_carbon.host}}
+carbon-cache-host: {{cconf.graphite_carbon.host}}
 # The port where carbon cache is listening.
-carbon-cache-port: {{cconf.url.graphite_carbon.pickle_port}}
+carbon-cache-port: {{cconf.graphite_carbon.pickle_port}}
 # The UDP port where we will listen.
 listen-port: {{aconf.port}}
 
