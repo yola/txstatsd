@@ -1,10 +1,10 @@
 import logging
 
-from yola.deploy.hooks.configurator import ConfiguratedApp
-from yola.deploy.hooks.python import PythonApp
-from yola.deploy.hooks.templating import TemplatedApp
-from yola.deploy.hooks.upstart import UpstartApp
-from yola.deploy.util import touch
+from yodeploy.hooks.configurator import ConfiguratedApp
+from yodeploy.hooks.python import PythonApp
+from yodeploy.hooks.templating import TemplatedApp
+from yodeploy.hooks.upstart import UpstartApp
+from yodeploy.util import touch
 
 log = logging.getLogger(__name__)
 
