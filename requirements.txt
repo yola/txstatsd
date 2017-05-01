@@ -1,4 +1,4 @@
-txStatsD==1.0.0dev20120728
+txStatsD==1.0.0+yola1
 # txStatsD dependencies:
 Twisted==12.2.0
 whisper==0.9.10
