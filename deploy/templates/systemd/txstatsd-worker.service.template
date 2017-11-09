@@ -1,0 +1,18 @@
+[Unit]
+Description=txstatsd Worker
+After=network.target
+
+[Service]
+User=nobody
+Group=nogroup
+ExecStart={{conf.deploy.root}}/txstatsd/live/virtualenv/bin/python \
+        {{conf.deploy.root}}/txstatsd/live/virtualenv/bin/twistd \
+        --logfile {{aconf.path.log}} \
+        --pidfile /run/txstatsd.pid \
+        --nodaemon \
+        statsd -c /etc/yola/txstatsd.conf
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
